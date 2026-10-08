@@ -3,9 +3,9 @@
 #include "bits.h"
 #include "status.h"
 
-int aux() {
+int main() {
     unsigned int num = 0x2C;
-    printf("The binary representation of %d is: ", num);
+    printf("The binary representation of %x is: ", num);
     print_binary(0x2C,10);
 
     uint32_t word = 0xFAFAFAFA;
@@ -19,5 +19,8 @@ int aux() {
 
     printf("sign_extend test: 0x%x, %d \n",value,sign_extend(value,width));
 
+    status_t s = status_unpack(word);
+
+    printf("status test:\n 0x%x,\n 0x%x,\n 0x%x,\n 0x%x,\n 0x%x,\n 0x%x\n",s.HEAT,s.COOL,s.FAN,s.FAULT,s.MODE,s.SETPOINT);
     return 0;
 }

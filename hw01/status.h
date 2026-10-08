@@ -1,3 +1,5 @@
+#include <stdint.h>
+
 typedef struct {
     uint32_t HEAT;
     uint32_t COOL;
