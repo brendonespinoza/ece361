@@ -6,4 +6,4 @@ struct statistics
     int longest_run;
 };
 
-struct statistics calculate_statistics(int data[], int length, int threshold);
+struct statistics calculate_statistics(float *data, int length, float threshold);

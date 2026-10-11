@@ -3,11 +3,11 @@
 #include <string.h>
 #include "reading.h"
 #include "stats.h"
+#include "histogram.h"
 
 #define LINE_LEN     128
 
 int main(int argc, char *argv[]) {
-    char line[LINE_LEN];
     float threshold = 30.0f;
 
     if (argc > 2) {
@@ -37,7 +37,7 @@ int main(int argc, char *argv[]) {
     printf("  Mean: %d °C\n", temp_stats.mean);
     printf("  longest run: %d\n", temp_stats.longest_run);
 
-    print_histogram(data.temps, MAX_READINGS);
+    print_histogram(data.temps);
 
 
     return 0;
