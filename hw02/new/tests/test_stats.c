@@ -13,7 +13,7 @@ void main(void) {
     if (single.max) printf("Single Max PASS\n");
 
     printf("Max at start and end\n");
-    float values[] = {42.0,0,42.0};
+    float values[] = {42.0,41.0,42.0};
     int count = 3;
     struct statistics single = calculate_statistics(values, 1, threshold);
     if (single.mean) printf("Maxs Mean PASS\n");
