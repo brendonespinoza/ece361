@@ -22,10 +22,14 @@ struct reading read_data(void){
             break;
         }
         if (sscanf(line, "%d %f %f", &data.ticks[count], &data.temps[count], &data.hums[count]) == 3)
+        {
             count++;
+        }
         else
             skipped++;
     }
+
+    data.count = count;
 
     printf("readings: %d\n", count);
     printf("skipped:  %d\n", skipped);

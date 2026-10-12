@@ -1,8 +1,8 @@
 struct statistics
 {
-    int min;
-    int max;
-    int mean;
+    float min;
+    float max;
+    float mean;
     int longest_run;
 };
 

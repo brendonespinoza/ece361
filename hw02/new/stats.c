@@ -2,9 +2,9 @@
 
 struct statistics calculate_statistics(float *data, int length, float threshold){
     // Find the minimum, maximum, mean, and longest run above the threshold
-    int min = data[0];
-    int max = data[0];
-    int sum = 0;
+    float min = data[0];
+    float max = data[0];
+    float sum = 0;
     int run = 0;
     int longest_run = 0;
     for (int i = 0; i < length; i++)

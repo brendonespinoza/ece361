@@ -2,6 +2,7 @@
 
 struct reading
 {
+    int count;
     int ticks[MAX_READINGS];
     float temps[MAX_READINGS];
     float hums[MAX_READINGS];

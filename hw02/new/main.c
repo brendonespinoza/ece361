@@ -24,20 +24,20 @@ int main(int argc, char *argv[]) {
     }
 
     struct reading data = read_data();
-    struct statistics hum_stats = calculate_statistics(data.hums, MAX_READINGS, threshold);
-    struct statistics temp_stats = calculate_statistics(data.temps, MAX_READINGS, threshold);
+    struct statistics hum_stats = calculate_statistics(data.hums, data.count, threshold);
+    struct statistics temp_stats = calculate_statistics(data.temps, data.count, threshold);
 
     printf("Humidity Statistics:\n");
-    printf("  Min: %d ", hum_stats.min);
-    printf("  Max: %d ", hum_stats.max);
-    printf("  Mean: %d %%RH\n", hum_stats.mean);
+    printf("  Min: %f ", hum_stats.min);
+    printf("  Max: %f ", hum_stats.max);
+    printf("  Mean: %f %%RH\n", hum_stats.mean);
     printf("Temperature Statistics:\n");
-    printf("  Min: %d ", temp_stats.min);
-    printf("  Max: %d ", temp_stats.max);
-    printf("  Mean: %d °C\n", temp_stats.mean);
+    printf("  Min: %f ", temp_stats.min);
+    printf("  Max: %f ", temp_stats.max);
+    printf("  Mean: %f °C\n", temp_stats.mean);
     printf("  longest run: %d\n", temp_stats.longest_run);
-
-    print_histogram(data.temps);
+    printf(" Histogram: \n");
+    print_histogram(data.temps, data.count);
 
 
     return 0;
